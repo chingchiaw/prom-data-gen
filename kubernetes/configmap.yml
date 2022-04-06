@@ -7,9 +7,9 @@ data:
   config.yml: |
     ---
     config:
-      - name: number_of_fruits
-        description: The number of fruits we have.
-        type: gauge
+      - name: pkb_counter_1
+        description: foo
+        type: counter
         labels: [name, color]
         sequence:
           - time: 5
@@ -18,22 +18,10 @@ data:
             labels:
               name: apple
               color: red
-          - eval_time: 5
-            operation: set
-            labels:
-              name: apple
-              color: red
           - time: 5
             eval_time: 1
             values: 0-20
             operation: inc
-            labels:
-              name: apple
-              color: green
-          - time: 5
-            eval_time: 1
-            values: 0-5
-            operation: dec
             labels:
               name: apple
               color: green
